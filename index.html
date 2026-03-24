@@ -125,6 +125,39 @@
   </main>
 
 
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const pandadocId = params.get("pandadoc_id");
 
+  const statusEl = document.getElementById("statusText");
+  const messageEl = document.getElementById("messageText");
+
+  if (!pandadocId) {
+    statusEl.innerText = "Error";
+    messageEl.innerText = "PandaDoc ID is missing.";
+  } else {
+    const webhookUrl = new URL("https://hook.us2.make.com/fu4thfnmudbncqpuwdrk1ufmv1syzugx");
+
+    webhookUrl.searchParams.set("pandadoc_id", encodeURIComponent(pandadocId));
+
+    if (sessionStorage.getItem("alreadyTriggered")) {
+      statusEl.innerText = "Already Processed";
+      messageEl.innerText = "This approval has already been processed.";
+    } else {
+      sessionStorage.setItem("alreadyTriggered", "true");
+
+      fetch(webhookUrl.toString(), { method: "GET" })
+        .then(() => {
+          statusEl.innerText = "Request Received";
+          messageEl.innerText =
+            "A draft email will be generated in your Drafts folder shortly with both the fee agreement link and the payment link.";
+        })
+        .catch(() => {
+          statusEl.innerText = "Error";
+          messageEl.innerText = "Something went wrong while processing approval.";
+        });
+    }
+  }
+</script>
 </body>
 </html>
