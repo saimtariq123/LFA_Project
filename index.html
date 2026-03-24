@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Approval Received | Law Firm Architects</title>
+
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --panel: #111111;
+      --border: #242424;
+      --text: #f5f5f5;
+      --muted: #c7c7c7;
+      --accent: #f2c230;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .topbar {
+      border-bottom: 1px solid var(--border);
+      background: #000;
+    }
+
+    .topbar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 28px 32px;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-box {
+      width: 52px;
+      height: 52px;
+      background: var(--accent);
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 22px;
+    }
+
+    .logo-text {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 72px 32px;
+    }
+
+    .heading {
+      font-size: 48px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .heading span {
+      color: var(--accent);
+    }
+
+    .card {
+      margin-top: 30px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      padding: 28px;
+    }
+
+    .message {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .status {
+      margin-bottom: 15px;
+      color: var(--accent);
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="logo-wrap">
+        <div class="logo-box">LFA</div>
+        <div class="logo-text">Law Firm Architects</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="hero">
+
+    <h1 class="heading">
+      Thanks for reviewing <span>the document</span>
+    </h1>
+
+    <div class="card">
+      <div class="status" id="statusText">Processing...</div>
+
+      <p class="message" id="messageText">
+        Please wait while we process your approval.
+      </p>
+    </div>
+
+  </main>
+
+
+
+</body>
+</html>
